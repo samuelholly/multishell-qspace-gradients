@@ -71,7 +71,7 @@ parser.add_argument('bvalues', nargs='+',
 
 args = parser.parse_args()
 
-bvalues=array(args.bvalues,dtype=int)
+bvalues=np.array(args.bvalues,dtype=int)
 n_b0 = int(args.n_b0)
 
 schema = []
