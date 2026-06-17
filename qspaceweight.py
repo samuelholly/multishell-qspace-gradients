@@ -70,7 +70,7 @@ parser.add_argument('bvalues', nargs='+',
 
 args = parser.parse_args()
 
-bvalues=np.array(args.bvalues,dtype=np.int)
+bvalues=array(args.bvalues,dtype=int)
 n_b0 = int(args.n_b0)
 
 schema = []
@@ -82,7 +82,7 @@ with open(args.unitary_schema) as csvfile:
     for row in reader:
         try:
             if start:
-                u = np.array(row, dtype=np.float)
+                u = np.array(row, dtype=float)
                 schema.append(u)
 
             if row[0] == "#shell":
@@ -135,7 +135,7 @@ if input_nshells == given_bvalues:
         if args.interspersed:
             output = intersperse_b0(output, n_b0)
             for n, dir in enumerate(output):
-                fd.write("Vector[%d] =" % n + dir + "\n")
+                fd.write("Vector[%d] = " % n + dir + "\n")
                 n = n + 1
 
         else:
@@ -149,7 +149,7 @@ if input_nshells == given_bvalues:
 
             for dir in output:
 
-                fd.write("Vector[%d] =" % n + dir + "\n")
+                fd.write("Vector[%d] = " % n + dir + "\n")
                 n = n + 1
 
 else:
