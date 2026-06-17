@@ -31,8 +31,9 @@ def intersperse_b0(input_dirs, n_b0):
     vec_per_block = N//int(n_blocks)  # number of points (directions) per block (equiv. of "floor")
 
     out_dirs = [None] * (N + n_b0)
-    oi = 0     # counter for out_dirs
-    ii = 0     # counter for input_dirs
+    oi = 1     # counter for out_dirs
+    ii = 1     # counter for input_dirs
+    out_dirs[0] = '( 0.000, 0.000, 0.000 )'
     for block in range(n_blocks):
         # copy the next block from the input:
         out_dirs[oi:oi+vec_per_block] = input_dirs[ii:ii+vec_per_block]
